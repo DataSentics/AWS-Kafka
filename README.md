@@ -21,7 +21,7 @@ Go to
 
 ```Security Groups > Inbound rules ```
 
-and set permissions (edit): Custom TCP for all IPs
+and set permissions (edit) Custom TCP > all IPs
 
 ### Step 3 (only for Windows)
 If you are on Windows, you can use PuTTY for the SSH connection to your EC2 machine. 
