@@ -118,14 +118,15 @@ ubuntu@ip-162-31-40-165:~/kafka_2.11-1.0.0$ KAFKA_HEAP_OPTS="-Xmx512M -Xms512M" 
 Open another terminal (Windows: new PuTTY connection) to your EC2 machine, go to the Kafka directory and *create a topic*
 
 ```
-ubuntu@ip-162-31-40-165:~/kafka_2.11-1.0.0$ bin/kafka-topics.sh --create --zookeeper MACHINE_PUBLIC_IP_ADRESS:2181 --replication-factor 1 --partitions 1 --topic test```
+ubuntu@ip-162-31-40-165:~/kafka_2.11-1.0.0$ bin/kafka-topics.sh --create --zookeeper MACHINE_PUBLIC_IP_ADRESS:2181 --replication-factor 1 --partitions 1 --topic test
+```
 
 You can type in something, e.g.
 
 ```
->First message
->Second message
->Third message
+First message
+Second message
+Third message
 ```
 
 ### Step 12: 
