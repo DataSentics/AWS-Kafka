@@ -17,9 +17,11 @@ Launch EC2 Ubuntu Instance. If you have the 12-month free account, use the free 
 ### Step 2 
 To be able to connect to the EC2 machine as Kafka consumer, we must allow the public TCP access to our machine on port 9092.
 
-Go to:
+Go to
 
-```Security Groups > Inbound rules > set permissions (edit) Custom TCP for all IPs```
+```Security Groups > Inbound rules ```
+
+and set permissions (edit): Custom TCP for all IPs
 
 ### Step 3 (only for Windows)
 If you are on Windows, you can use PuTTY for the SSH connection to your EC2 machine. 
@@ -132,7 +134,6 @@ Connect to the server and consume the data by whatever system you want! E.g. usi
 ```
 import org.apache.spark.sql.functions.{explode, split}
 
-// Setup connection to Kafka
 val kafka = spark.readStream
   .format("kafka")
   .option("kafka.bootstrap.servers", "MACHINE_PUBLIC_IP_ADRESS:9092")   // comma separated list of broker:host
@@ -146,3 +147,4 @@ val df = kafka.select(explode(split($"value".cast("string"), "\\s+")).as("word")
   .count
   
   display(df.select($"word", $"count").orderBy($"count"))
+```
